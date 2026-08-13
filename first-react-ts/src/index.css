@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #aa3bff;
+  color-scheme: light dark;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #c084fc;
+  }
+}
+
