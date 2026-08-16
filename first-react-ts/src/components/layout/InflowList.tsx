@@ -22,30 +22,31 @@ const inflows: Inflow[] = [
   { date: new Date("2026-03-01"), currency: Currency.AED, amount: 300 },
 ];
 
-const rowStyle = "px-4 py-2 border border-gray-300";
+const cellClassName = "px-4 py-2 border border-gray-300";
 
-const displayedList = inflows.map( (item, index) => 
-    <tr key = {index} className="even:bg-gray-50">
-        <td className={rowStyle}> {item.date.toLocaleDateString()}</td>
-        <td className={rowStyle}> {item.amount}{currencySymbols[item.currency]}</td>
-    </tr>
-);
-
+const displayedList = inflows.map((item, index) => (
+  <tr key={index} className="even:bg-gray-50">
+    <td className={cellClassName}> {item.date.toLocaleDateString()}</td>
+    <td className={cellClassName}>
+      {" "}
+      {item.amount}
+      {currencySymbols[item.currency]}
+    </td>
+  </tr>
+));
 
 export default function InflowList() {
-    return (
-        <div>
-            <table className="border-collapse border border-gray-300">
-                <thead>
-                    <tr>
-                        <th className={rowStyle}>Date</th>
-                        <th className={rowStyle}>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {displayedList}
-                </tbody>
-            </table>
-        </div>
-    );
+  return (
+    <div>
+      <table className="border-collapse border border-gray-300">
+        <thead>
+          <tr>
+            <th className={cellClassName}>Date</th>
+            <th className={cellClassName}>Amount</th>
+          </tr>
+        </thead>
+        <tbody>{displayedList}</tbody>
+      </table>
+    </div>
+  );
 }

@@ -11,9 +11,8 @@ export function MyButton() {
   const toggle = useAppStore((state) => state.toggle);
 
   return (
-    <button onClick={() => toggle()} className = {getButtonClasses(isActive)}>
-      I'm a button in state {isActive ? "green" : "blue"} 
+    <button onClick={() => toggle()} className={getButtonClasses(isActive)}>
+      I'm a button in state {isActive ? "green" : "blue"}
     </button>
   );
 }
-
